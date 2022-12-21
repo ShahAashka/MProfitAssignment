@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
 
-const shoppingIcon = require('../assets/shopping.png');
-const resturantIcon = require('../assets/resturant.png');
-const transportIcon = require('../assets/transport.png');
+const shoppingIcon = require('../../assets/shopping.png');
+const resturantIcon = require('../../assets/resturant.png');
+const transportIcon = require('../../assets/transport.png');
 
 const dummyData = [
   {
