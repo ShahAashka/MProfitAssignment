@@ -1,11 +1,12 @@
 import React from 'react';
 import {SafeAreaView, View, Text, StyleSheet} from 'react-native';
 import Budget from './Budget';
+import GraphCard from './GraphCard';
 
 const Intro = () => {
   return (
     <SafeAreaView style={styles.mainContainer}>
-      <Text>Two</Text>
+      <GraphCard />
       <Budget />
     </SafeAreaView>
   );
@@ -13,7 +14,7 @@ const Intro = () => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: '#F4F7F7',
+    backgroundColor: '#FFFFFF',
     flex: 1,
     justifyContent: 'space-between',
   },

@@ -10,7 +10,7 @@ import {
   Text,
 } from 'react-native';
 import Home from '../components/Dashboard/Home';
-import Intro from '../components/Intro';
+import Intro from '../components/IntoPage/Intro';
 // import TabThree from '../components/TabThree';
 import TabFour from '../components/TabFour';
 import TabFive from '../components/TabFive';

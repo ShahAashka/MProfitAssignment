@@ -13,6 +13,7 @@ const dummyData = [
     paymentMode: 'In Cash',
     color: 'rgba(129, 178, 202, 0.14)',
     icon: shoppingIcon,
+    fillColor: '#81B2CA',
   },
   {
     category: 'Resturant',
@@ -21,6 +22,7 @@ const dummyData = [
     paymentMode: 'Card',
     color: 'rgba(131, 111, 129, 0.14)',
     icon: resturantIcon,
+    fillColor: '#836F81',
   },
   {
     category: 'Transport',
@@ -29,18 +31,19 @@ const dummyData = [
     paymentMode: 'Online',
     color: 'rgba(66, 136, 124, 0.14)',
     icon: transportIcon,
+    fillColor: '#42887C',
   },
 ];
 
 const Budget = () => {
-  const _renderItem = ({item}) => {
+  const renderItem = ({item}) => {
     return (
       <View style={styles.cardViewContainer}>
         <View style={[styles.iconContainer, {backgroundColor: item.color}]}>
           <Image
             source={item.icon}
             resizeMode={'contain'}
-            style={styles.icon}
+            style={[styles.icon, {tintColor: item.fillColor}]}
           />
         </View>
         <View style={styles.descriptionView}>
@@ -59,11 +62,20 @@ const Budget = () => {
 
   return (
     <View style={styles.mainContainer}>
+      <View style={styles.budgetContainer}>
+        <View style={styles.budgetTextextContainer}>
+          <Text style={styles.progressText}>Budget for October</Text>
+          <Text style={styles.progressBudgetNumber}>{`$2478`}</Text>
+        </View>
+        <View style={styles.progressBarContainer}>
+          <View style={styles.progressBar} />
+        </View>
+      </View>
       <View style={styles.subContainer}>
         <Text style={styles.titleStyle}>Your Budget</Text>
         <FlatList
           data={dummyData}
-          renderItem={_renderItem}
+          renderItem={renderItem}
           keyExtractor={item => item.category}
         />
       </View>
@@ -75,15 +87,15 @@ const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: '#2C383F',
     borderWidth: 1,
-    paddingTop: 144,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
+    marginTop: 32,
   },
   subContainer: {
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     backgroundColor: '#F4F6F6',
-    paddingTop: 27,
+    paddingTop: 24,
     paddingLeft: 24,
     paddingRight: 24,
   },
@@ -138,6 +150,43 @@ const styles = StyleSheet.create({
   },
   centreAlignView: {
     justifyContent: 'center',
+  },
+  progressText: {
+    fontStyle: 'normal',
+    fontWeight: '600',
+    fontSize: 13,
+    lineHeight: 20,
+    color: '#ffffff',
+    textAlignVertical: 'center',
+  },
+  progressBudgetNumber: {
+    fontStyle: 'normal',
+    fontWeight: '700',
+    fontSize: 21,
+    lineHeight: 26,
+    color: '#ffffff',
+    textAlignVertical: 'center',
+  },
+  progressBarContainer: {
+    backgroundColor: 'rgba(255, 255, 255, 0.38)',
+    height: 6,
+    borderRadius: 70,
+    width: '100%',
+  },
+  progressBar: {
+    backgroundColor: '#FAB512',
+    height: 6,
+    borderRadius: 70,
+    width: '65%',
+  },
+  budgetContainer: {
+    marginHorizontal: 44,
+    marginVertical: 34,
+  },
+  budgetTextextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 17,
   },
 });
 
