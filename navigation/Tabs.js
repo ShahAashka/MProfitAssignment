@@ -16,6 +16,7 @@ import TabFour from '../components/TabFour';
 import TabFive from '../components/TabFive';
 import DashboardTitle from '../components/Dashboard/DashboardTitile';
 import TabThree from '../components/TabThree';
+import IntroTitle from '../components/IntoPage/IntroTitle';
 
 // const Tab = createBottomTabNavigator();
 
@@ -201,7 +202,10 @@ const Tabs = () => {
   return (
     <Stack.Navigator initialRouteName="Stack">
       <Stack.Screen name="Stack" component={BottomTabs} options={{headerShown: false}}/>
-      <Stack.Screen name="Intro" component={Intro} />
+      <Stack.Screen name="Intro" component={Intro} 
+      options={{
+          headerTitle: () => <IntroTitle />,
+        }} />
     </Stack.Navigator>
   );
 };

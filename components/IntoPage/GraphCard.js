@@ -35,8 +35,8 @@ const GraphCard = () => {
     },
   ];
   const {width} = useWindowDimensions();
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [data, setData] = useState([]);
 
   //   const getData = async () => {
   //     const result = await fetch(
