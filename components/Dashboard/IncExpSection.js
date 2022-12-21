@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 
 const income = require('../../assets/homeIncome.png');
 const expense = require('../../assets/walletExp.png');
@@ -8,7 +8,7 @@ const IncExpSection = props => {
     <View style={styles.mainContainer}>
       <Text style={styles.titleStyle}>Cash</Text>
       <View style={styles.subContainer}>
-        <View
+        <TouchableOpacity
           style={[
             styles.incomeContainer,
             {backgroundColor: '#D9E7E5', marginRight: 16},
@@ -19,8 +19,9 @@ const IncExpSection = props => {
           </View>
           <Text style={styles.numberText}>{'$' + props.income}</Text>
           <Text style={styles.tagText}>Income</Text>
-        </View>
-        <View style={[styles.incomeContainer, {backgroundColor: '#E6E2E6'}]}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.incomeContainer, {backgroundColor: '#E6E2E6'}]}>
           <View
             style={[styles.bankIconContainer, {backgroundColor: '#836F81'}]}>
             <Image
@@ -31,7 +32,7 @@ const IncExpSection = props => {
           </View>
           <Text style={styles.numberText}>{'$' + props.expense}</Text>
           <Text style={styles.tagText}>Expense</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );

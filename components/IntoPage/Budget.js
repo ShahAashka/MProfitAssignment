@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 
 const shoppingIcon = require('../../assets/shopping.png');
 const resturantIcon = require('../../assets/resturant.png');
@@ -38,7 +45,7 @@ const dummyData = [
 const Budget = () => {
   const renderItem = ({item}) => {
     return (
-      <View style={styles.cardViewContainer}>
+      <TouchableOpacity style={styles.cardViewContainer}>
         <View style={[styles.iconContainer, {backgroundColor: item.color}]}>
           <Image
             source={item.icon}
@@ -52,11 +59,11 @@ const Budget = () => {
             <Text style={styles.dateText}>{item.date}</Text>
           </View>
           <View style={[styles.centreAlignView, {alignItems: 'flex-end'}]}>
-            <Text style={styles.categoryText}>{`$` + item.amount}</Text>
+            <Text style={styles.categoryText}>{'$' + item.amount}</Text>
             <Text style={styles.dateText}>{item.paymentMode}</Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
@@ -65,7 +72,7 @@ const Budget = () => {
       <View style={styles.budgetContainer}>
         <View style={styles.budgetTextextContainer}>
           <Text style={styles.progressText}>Budget for October</Text>
-          <Text style={styles.progressBudgetNumber}>{`$2478`}</Text>
+          <Text style={styles.progressBudgetNumber}>{'$2478'}</Text>
         </View>
         <View style={styles.progressBarContainer}>
           <View style={styles.progressBar} />

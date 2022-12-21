@@ -1,12 +1,12 @@
 import React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 
 const designImg = require('../../assets/cardDesign.png');
 const visaImg = require('../../assets/visa.png');
 
 const CardComponent = props => {
   return (
-    <View style={styles.mainContainer}>
+    <TouchableOpacity style={styles.mainContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.balanceText}>Available balance</Text>
         <Text style={styles.amountText}>{`$` + props.balance}</Text>
@@ -24,7 +24,7 @@ const CardComponent = props => {
           resizeMode={'contain'}
         />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
